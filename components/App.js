@@ -5,7 +5,7 @@ class App extends React.Component {
     render() {
         return (
             <View>
-                <Text>Kantapong Chaloemkitwanit</Text>
+                <Text  style={{ fontSize:32 }} >Kantapong Chaloemkitwanit S60020141520026</Text>
             </View>
         );
     }
