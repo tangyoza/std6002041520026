@@ -7,13 +7,15 @@ class Card extends Component {
         return (
             <View>
                 <CardSection>
-                    <Image 
-                        style={{ width:100,
-                                 height:100
-                                }}
-                        source={{ uri: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'}}/>
+                    <View>
+                        <Image 
+                            style={{ width:100,
+                                    height:100
+                                    }}
+                            source={{ uri: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'}}/>
                         <Text style={{}}>To be Tomorrow</Text>
                         <Text>Pops</Text>
+                    </View>
                 </CardSection>
                 <CardSection>
                     <View style={styles.center}>
