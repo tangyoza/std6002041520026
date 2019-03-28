@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 10 },
         shadowOpacity: 1,
         elevation: 10,
-        position: 'relative'
+        position: 'relative' 
     }
     
 });
