@@ -5,23 +5,24 @@ import CardSection from './CardSection';
 class Card extends Component {
     render(){
         return (
-            <View>
+            <View style={{ backgroundColor: 'rgba(0,0,0,0.2)', borderRadius:5}}>
                 <CardSection>
-                    <View style={{ flexDirection : "row", backgroundColor: 'rgba(0,0,0,0.2)',borderRadius:5}}>
+                    <View style={{ flexDirection : "row", backgroundColor: 'rgba(0,0,0,0.4)',borderRadius:10}}>
                         <Image 
-                            style={{ width:100,
-                                    height:100,
-                                    borderRadius:1000
+                            style={{ width:80,
+                                    height:80,
+                                    borderRadius:1000,
+                                    margin:10
                                     }}
                             source={{ uri: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'}}/>
                         <View style={{margin:15}}>
-                            <Text style={{fontSize:20}}>To be Tomorrow</Text>
-                            <Text style={{fontSize:20}}>Pops</Text>
+                            <Text style={{fontSize:20, color: '#FFF'}}>Song : To be Tomorrow</Text>
+                            <Text style={{fontSize:20, color: '#FFF', marginTop:10}}>Artis : Lisa Asakira</Text>
                         </View>
                     </View>
                 </CardSection>
                 <CardSection>
-                    <View style={styles.center}>
+                    <View style={styles.center}> 
                         <Image 
                                 style={{ width:350,
                                         height:250,
@@ -34,7 +35,7 @@ class Card extends Component {
                 </CardSection>
                 <CardSection >
                     <View style={styles.center}>
-                        <View  style={{ width:100, marginTop:20}} >
+                        <View  style={{ width:100, marginTop:20, marginBottom:20}} >
                             <Button title="Buy" color="#000"/>
                         </View>
                     </View>
@@ -47,7 +48,7 @@ class Card extends Component {
 
 const styles ={
     center:{
-        justifyContent:'center', alignItems:'center'
+        justifyContent:'center', alignItems:'center', marginTop:5
     }
 }
 export default Card;
