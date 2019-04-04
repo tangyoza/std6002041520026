@@ -7,14 +7,17 @@ class Card extends Component {
         return (
             <View>
                 <CardSection>
-                    <View>
+                    <View style={{ flexDirection : "row", backgroundColor: 'rgba(0,0,0,0.2)',borderRadius:5}}>
                         <Image 
                             style={{ width:100,
-                                    height:100
+                                    height:100,
+                                    borderRadius:1000
                                     }}
                             source={{ uri: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'}}/>
-                        <Text style={{}}>To be Tomorrow</Text>
-                        <Text>Pops</Text>
+                        <View style={{margin:15}}>
+                            <Text style={{fontSize:20}}>To be Tomorrow</Text>
+                            <Text style={{fontSize:20}}>Pops</Text>
+                        </View>
                     </View>
                 </CardSection>
                 <CardSection>
@@ -22,6 +25,7 @@ class Card extends Component {
                         <Image 
                                 style={{ width:350,
                                         height:250,
+                                        borderRadius:10,
                                         justifyContent:'center',
                                         alignItems:'center'
                                         }}
