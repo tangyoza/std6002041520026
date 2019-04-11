@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigator';
 import Header from './Header';
 import Card from './Card';
 import LoginScr from './Login';
-import ProfileScr from './profile';
+import ProfileScr from './Profile';
 
 
 /*
@@ -24,11 +24,11 @@ class App extends React.Component {
 export default App;
 
 */
-const MainNavigator = createStackNavigator({
-	Login: {screen : LoginScr},
-	Profile: { screen : ProfileScr }
+const MainNavigator = createStacknavigator({
+	Login: LoginScr,
+	Profile: ProfileScr
 },{
-	initialRouteName: "Login"
+	initialRouteName: "LoginScr"
 	
 });
 
