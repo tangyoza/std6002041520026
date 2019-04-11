@@ -14,7 +14,8 @@ class Login extends Component{
 				color: '#FFFFFF',
 				fontSize: 20,
 				},
-				headerTintColor: "blue",
+                headerTintColor: "#6598FF",
+                headerLeft: null
 	}
     constructor(){
         super()
@@ -58,10 +59,19 @@ class Login extends Component{
 			alert(error);
         })
     }
+    /*
+    async componentWillMount(){
+        let token = await AsyncStorage.getItem("User_Token");
+        if(token!=null){
+            this.props.navigation.navigate("Profile");
+        }
+
+    }
+    */
     async componentDidMount(){
         let token = await AsyncStorage.getItem("User_Token");
         if(token!=null){
-            console.log(token);
+            //console.log(token);
             this.props.navigation.navigate("Profile");
         }
         
@@ -98,7 +108,7 @@ class Login extends Component{
                 <Button
                     style={{borderRadius:30}}
                     title="Login"
-                    color="#64a2ff"
+                    color="#2332CC"
                     onPress={this.onPressLogin}
 
 
@@ -118,7 +128,7 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#68bFc0',
+      backgroundColor: '#6598FF',
     },
     inputContainer: {
         borderBottomColor: '#F5FCFF',

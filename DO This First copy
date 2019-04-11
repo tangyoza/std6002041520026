@@ -1,0 +1,35 @@
+npm install
+npm install --save react-navigation
+npm install --save react-native-gesture-handler
+
+react-native link react-native-gesture-handler
+
+npm install @react-native-community/async-storage
+react-native link @react-native-community/async-storage
+
+add
+import com.facebook.react.ReactActivityDelegate;
+import com.facebook.react.ReactRootView;
+import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
+after **import com.facebook.react.ReactActivity;**
+
+go to MainActivity path ** android / app / src / main / java / com / projectname
+add
+@Override
+protected ReactActivityDelegate createReactActivityDelegate() {
+  return new ReactActivityDelegate(this, getMainComponentName()) {
+    @Override
+    protected ReactRootView createRootView() {
+    return new RNGestureHandlerEnabledRootView(MainActivity.this);
+    }
+  };
+}
+after
+**
+  @Override
+  protected String getMainComponentName() {
+    return "Example";
+  }
+
+**
+
