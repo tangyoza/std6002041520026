@@ -29,19 +29,19 @@ class Login extends Component{
     }
     onChangeEmail(e){
         this.setState({ email: e});
-        console.log('Email : ',this.state.email);
+        // console.log('Email : ',this.state.email);
     }
     onChangePassword(e){
         this.setState({ password: e});
-        console.log('Password : ',this.state.password);
+        // console.log('Password : ',this.state.password);
     }
     onPressLogin(){
-        console.log(this.state)
+        // console.log(this.state)
         const url = "http://128.199.240.120:9999/api/auth/login";
         
         axios.post(url,this.state)
         .then(async function (resp){
-            console.log(resp.data.data.token)
+            // console.log(resp.data.data.token)
             alert("Login Successfully");
 			try{
 				await AsyncStorage.setItem('User_Token',resp.data.data.token);
@@ -50,12 +50,12 @@ class Login extends Component{
 			
 			}catch(error){
                 alert("Email or Password incorrect");
-				console.log(error);
+				// console.log(error);
 			}
             
         }.bind(this))
         .catch(function (error){
-            console.log(error)
+            // console.log(error)
 			alert(error);
         })
     }

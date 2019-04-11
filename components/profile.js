@@ -30,12 +30,12 @@ class profile extends React.Component{
 				fontSize: 20,
 				},
 				headerTintColor: "#6598FF",
-				//headerLeft: null
+				headerLeft: null
 		};
 	async componentDidMount(){
 		try{
 			const value = await AsyncStorage.getItem('User_Token');
-			console.log("TOKEN : "+value);
+			// console.log("TOKEN : "+value);
 			if(value !== null){
 				const url = "http://128.199.240.120:9999/api/auth/me";
 				const config = {
@@ -64,7 +64,7 @@ class profile extends React.Component{
 
 
 		} catch (error){
-			console.log(error);
+			// console.log(error);
 		}
 	
 	};
