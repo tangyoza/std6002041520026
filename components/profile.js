@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
-import {AsyncStorage} from 'react-native';
+import {View, Text, Button, StyleSheet} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import axios from 'axios';
 
 class profile extends React.Component{
@@ -65,11 +65,12 @@ class profile extends React.Component{
 
 	render(){
 		return(
-			<View>
-				
-				<Text>Name : {this.state.name}</Text>
-				<Text>Email : {this.state.email}</Text>
-
+			<View style={styles.container}>
+				<Text style={{fontSize:32}}>Welcome</Text>
+				<View style={{}}>
+					<Text style={{fontSize:16}}>Name : {this.state.name}</Text>
+					<Text style={{fontSize:16}}>Email : {this.state.email}</Text>
+				</View>
 				<Button
 					title="Logout"
 					onPress = { this.onPressLogout}
@@ -81,6 +82,51 @@ class profile extends React.Component{
 
 	}
 }
-
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#68bFc0',
+    },
+    inputContainer: {
+        borderBottomColor: '#F5FCFF',
+        backgroundColor: '#FFFFFF',
+        borderRadius:30,
+        borderBottomWidth: 1,
+        width:350,
+        height:45,
+        marginBottom:20,
+        flexDirection: 'row',
+        alignItems:'center'
+    },
+    inputs:{
+        height:45,
+        marginLeft:16,
+        borderBottomColor: '#FFFFFF',
+        flex:1,
+    },
+    inputIcon:{
+      width:30,
+      height:30,
+      marginLeft:15,
+      justifyContent: 'center'
+    },
+    buttonContainer: {
+      height:45,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginBottom:20,
+      width:250,
+      borderRadius:30,
+    },
+    loginButton: {
+      backgroundColor: "#00b5ec",
+    },
+    loginText: {
+      color: 'white',
+    }
+  });
 export default profile;
 

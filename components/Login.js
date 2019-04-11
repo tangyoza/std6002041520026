@@ -1,8 +1,8 @@
 // import libraly
 import React, { Component } from 'react';
-import {View, Text, TextInput, Image, Button } from 'react-native';
+import {View, Text, TextInput, Image, Button,StyleSheet } from 'react-native';
 import axios from 'axios';
-import {AsyncStorage} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 
 // write componenet
@@ -48,6 +48,7 @@ class Login extends Component{
                 
 			
 			}catch(error){
+                alert("Email or Password incorrect");
 				console.log(error);
 			}
             
@@ -67,10 +68,12 @@ class Login extends Component{
     }
     render(){
         return(
-            <View style={{marginTop:60}}>
-                <Image source={{uri: 'https://png.icons8.com/message/ultraviolet/50/3498db'}}/>
+            <View style={styles.container}>
+                <Image style={{ width:100,height:100}} source={{uri: 'https://png.icons8.com/key-2/ultraviolet/50/3498db'}}/>
+                <View style={styles.inputContainer}>
+                <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/message/ultraviolet/50/3498db'}}/>
                 <TextInput
-                    style={{ fontSize:30, height:50}}
+                    style={styles.inputs}
                     placeholder ="Email"
                     keyboardType ="email-address"
                     underlineColorAndroid ="transparent"
@@ -78,32 +81,82 @@ class Login extends Component{
                     value={this.state.email}
                     onChangeText={this.onChangeEmail}
                 />
-
-                <TextInput
-                    style={{ fontSize:30, height:50}}
-                    placeholder ="Password"
-                    secureTextEntry={true}
-                    underlineColorAndroid ="transparent"
-                    value={this.state.password}
-                    onChangeText={this.onChangePassword}
-                />
+                </View>
+                <View style={styles.inputContainer}>
+                    <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/key-2/ultraviolet/50/3498db'}}/>
+                    <TextInput
+                        style={styles.input}
+                        placeholder ="Password"
+                        secureTextEntry={true}
+                        underlineColorAndroid ="transparent"
+                        value={this.state.password}
+                        onChangeText={this.onChangePassword}
+                    />
+                </View>
                     
-
+                <View style={{width:350,borderRadius:30}}>
                 <Button
+                    style={{borderRadius:30}}
                     title="Login"
                     color="#64a2ff"
                     onPress={this.onPressLogin}
 
 
                 />
-                <Button
+                </View>
+                {/* <Button
                     title="Profile"
                     color="#64a2ff"
                     onPress={ () => this.props.navigation.navigate('Profile')}
-                />
+                /> */}
             </View>
         );
     }
 }
-
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#68bFc0',
+    },
+    inputContainer: {
+        borderBottomColor: '#F5FCFF',
+        backgroundColor: '#FFFFFF',
+        borderRadius:30,
+        borderBottomWidth: 1,
+        width:350,
+        height:45,
+        marginBottom:20,
+        flexDirection: 'row',
+        alignItems:'center'
+    },
+    inputs:{
+        height:45,
+        marginLeft:16,
+        borderBottomColor: '#FFFFFF',
+        flex:1,
+    },
+    inputIcon:{
+      width:30,
+      height:30,
+      marginLeft:15,
+      justifyContent: 'center'
+    },
+    buttonContainer: {
+      height:45,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginBottom:20,
+      width:250,
+      borderRadius:30,
+    },
+    loginButton: {
+      backgroundColor: "#00b5ec",
+    },
+    loginText: {
+      color: 'white',
+    }
+  });
 export default Login;
